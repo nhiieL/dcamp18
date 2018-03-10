@@ -1,0 +1,237 @@
+// Navigation Variables
+$content-width: 1500px;
+$breakpoint: 500px;
+$nav-height: 80px;
+$nav-background: #fff;
+$nav-font-color: #323648;
+$link-hover-color: #cd853f;
+$nav-fonts: 'Montserrat', sans-serif;
+
+
+.navigation {
+  height: $nav-height;
+  background: $nav-background;
+
+  margin-left: -80px;
+  border-bottom: 0.9px solid #dcdcdc;
+
+}
+
+.brand{
+  position: absolute;
+  line-height: $nav-height;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  font-weight: bold;
+
+  p{
+
+    margin-left: 175px;
+    margin-top: -80px;
+    color:$link-hover-color;
+  }
+
+  a,
+  a:link{
+    text-decoration: none;
+    color: #1e90ff;
+  }
+  a:visited {
+    text-decoration: none;
+  }
+}
+.register_link {
+  position: absolute;
+  line-height: $nav-height;
+  font-size: 0.8;
+   margin-left: 799px;
+    margin-top: 1px;
+  a,
+  a:link, a:visited {
+    color:$link-hover-color ;
+    border: 0.5px solid $link-hover-color;
+    padding: 10px 10px;
+    border-radius: -25px;
+    text-align: center;
+    text-decoration: none;
+}
+  a:hover, a:active {
+    background-color: $link-hover-color;
+    color: white;
+}
+
+}
+
+
+.nav-container {
+  max-width: $content-width;
+  margin: 0 auto;
+  font-family:$nav-fonts;
+
+}
+
+
+nav {
+  float: right ;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+
+
+    li {
+
+
+      float: left;
+      position: relative;
+
+
+
+      a,
+      a:visited {
+        display: block;
+        padding: 0 20px;
+        line-height: $nav-height;
+        background: $nav-background;
+        color: $nav-font-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: none;
+          color: $link-hover-color;
+        }
+        &:not(:only-child):after {
+          padding-left: 4px;
+          content: ' ▾';
+        }
+      }
+    }
+  }
+}
+.header{
+  p{
+    color: #323648;
+    font-family: 'Open Sans', sans-serif;
+  }
+    width: 820px;
+    padding: 15px;
+    margin: 60px;
+
+  float: right;
+}
+h1{
+font-family: 'Merriweather', serif;
+ font-size: 4.5em;
+  color: #323648;
+}
+input[type=text]{
+    width: 460px;
+    padding: 20px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid $link-hover-color;
+    box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+input[type=submit] {
+    width: 35%;
+    background-color: $link-hover-color;
+    color: white;
+    padding: 20px ;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Mobile navigation */
+
+// Binds to JS Toggle
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $nav-background;
+  height: $nav-height;
+  width: $nav-height;
+}
+@media only screen and (max-width: 798px) {
+  // Hamburger nav visible on mobile only
+  .nav-mobile {
+    display: block;
+  }
+  nav {
+   width: 100%;
+    padding: $nav-height 0 15px;
+    ul {
+      display: none;
+      li {
+        float: none;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+        ul li a {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: $breakpoint) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+  span,
+  span:before,
+  span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: $nav-font-color;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 300ms ease-in-out;
+  }
+  span:before {
+    top: -10px;
+  }
+  span:after {
+    bottom: -10px;
+  }
+  &.active span {
+    background-color: transparent;
+    &:before,
+    &:after {
+      top: 0;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// Page content
+article {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 10px;
+}
